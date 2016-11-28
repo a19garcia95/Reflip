@@ -1,3 +1,69 @@
 // Place all the styles related to the properties controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.title h1 {
+  text-align: center;
+  margin-top: 400px;
+  font-family: Arial,;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 70px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bolder;
+  font-weight: 900;
+  text-shadow: -1px -1px 0 #000;
+}
+
+.searchbar {
+  text-align: center;
+  align-items: center;
+  flex-direction: row;
+  // display: inline-flex;
+  justify-content: center;
+  top: 30%;
+  position: relative;
+  width: 75%;
+  margin: 0 auto;
+  background-color: rgba(0,0,0,.7);
+  height: 100px;
+  color: #fff;
+  z-index: 2;
+}
+
+.search-field {
+  padding: 1.5em;
+}
+
+.address-field {
+  margin-left: 4em;
+}
+
+div input.field {
+  height: auto;
+  font-size: 2.5em;
+  padding: 0;
+  padding-left: .5em;
+}
+
+div.search-button {
+  padding-top: 1.5em;
+  margin-left: 0;
+}
+
+#video-background {
+  position: absolute;
+  display: block;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: initial;
+  height: auto;
+  z-index: 1;
+  margin: 0 auto;
+  object-fit: cover;
+  padding: 0;
+}
