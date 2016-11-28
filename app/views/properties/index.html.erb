@@ -1,1 +1,20 @@
+<div id="video-background">
+  <%= video_tag "real_estate_vid.mp4", autoplay:true, height: "100%", width: "100%", loop: true%>
+</div>
 
+<div class="title ">
+  <h1 id="head_title">Search your next Real Estate Investment</h1>
+</div>
+<form action="/properties" method='get'>
+  <div class="searchbar">
+    <div class="address-field search-field col-sm-6">
+      <input type="text" name="address" class="field form-control" placeholder="Address">
+        </div>
+    <div class="city-field search-field col-sm-4">
+      <input type="text" name="citystatezip"class="field form-control" placeholder="City, State Zip">
+        </div>
+    <div class="search-button col-sm-1">
+      <button type="submit" name="button" class="searchbtn btn btn-primary btn-lg">Search</button>
+    </div>
+  </div>
+</form>
