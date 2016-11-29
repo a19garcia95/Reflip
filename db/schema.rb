@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161127222251) do
+ActiveRecord::Schema.define(version: 20161129022746) do
 
   create_table "properties", force: :cascade do |t|
     t.string   "address"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20161127222251) do
     t.integer  "valuechange"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "zillow_id"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.string   "latitude"
+    t.string   "longitude"
   end
 
   create_table "users", force: :cascade do |t|

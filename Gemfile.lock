@@ -65,6 +65,7 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     gmaps4rails (2.1.2)
+    hirb (0.7.3)
     httparty (0.14.0)
       multi_xml (>= 0.5.2)
     i18n (0.7.0)
@@ -195,6 +196,7 @@ DEPENDENCIES
   devise
   devise-bootstrap-views
   gmaps4rails
+  hirb
   httparty
   jbuilder (~> 2.5)
   jquery-rails

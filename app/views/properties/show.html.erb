@@ -1,7 +1,11 @@
 <p>
-  This is the zillow ID: <%= @zillowId %>
+  This is the zillow ID: <%= @property.estimate %>
+  This is the zillow ID: <%= @property.zillow_id %>
+  This is the zillow ID: <%= @property.sqft %>
+  This is the zillow ID: <%= @property.baths %>
+  This is the zillow ID: <%= @property.bedrooms %>
+  This is the zillow ID: <%= @property.valuechange %>
 </p>
 
-<p>
-  This is the change in value <%= @valueChange30 %>
-</p>
+
+<%= @property.chart %>
