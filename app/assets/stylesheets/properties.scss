@@ -68,6 +68,9 @@ div.search-button {
   padding: 0;
 }
 
+
+// SHOW VIEW STYLESHEETS
+
 .house_image {
 
 }
@@ -108,4 +111,89 @@ div.search-button {
 
 .feedback_send {
  margin-top: 20px;
+}
+
+
+
+// NAVBAR
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+
+.width-100 {
+  width: 100%;
+}
+
+.nav {
+  background-color: #304362;
+  margin: 0;
+  top: 0;
+  padding: 2.5em;
+  padding-top: 5em;
+  list-style: none;
+  z-index: 100;
+  height: 40em;
+  color: #fff;
+  height: 100%;
+}
+
+.nav-btn {
+  margin-left: -18em;
+  margin-top: 0.8em;
+  left: 100%;
+  background-color: inherit;
+  border: 0;
+  cursor: pointer;
+}
+
+.fa.fa-bars {
+  color: #304362;
+}
+
+.nav-group {
+  margin: 0 0 2em 0;
+  padding-left: 2em;
+}
+
+.nav-text {
+  text-decoration: none;
+  color: #fff;
+}
+
+.property-display {
+  margin: 0 auto;
+  height: 20em;
+  width: 80%;
+  background-color: grey;
+}
+
+.property-info {
+  background: url('http://www.costamiamihomes.com/assets/condo-images/echo-brickell-miami_3.jpg') no-repeat;
+  background-size: 100% 100%;
+  height: 20em;
+  width: 100%;
+}
+
+
+
+
+.trend {
+  height: 30em;
+  width: 100%;
+  // background-color: yellow;
 }
