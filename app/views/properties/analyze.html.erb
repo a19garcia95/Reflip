@@ -5,6 +5,13 @@
     <div class="property-info">
       Property Info
     </div>
-  </div>
+</div>
 
   <div class="clearfix"></div>
+
+
+  <% @property.comparibles.each do |key| %>
+    <p>
+      <%= key["zestimate"]["amount"]["__content__"] %>
+    </p>
+  <% end %>

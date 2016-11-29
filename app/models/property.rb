@@ -29,6 +29,11 @@ class Property < ApplicationRecord
     chart = HTTParty.get(get_chart)
   end
 
+  def comparibles
+    second_zillow_api = "http://www.zillow.com/webservice/GetDeepComps.htm?zws-id=X1-ZWz19hai5nqayz_6ttia&zpid=#{zillow_id}&count=#{10}"
+    comparables = HTTParty.get(second_zillow_api)["comps"]["response"]["properties"]["comparables"]["comp"]
+  end
+
 
 
 end

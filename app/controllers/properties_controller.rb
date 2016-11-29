@@ -1,4 +1,5 @@
 class PropertiesController < ApplicationController
+  before_action :set_property, only:[:analyze]
 
   def index
 
@@ -22,6 +23,12 @@ class PropertiesController < ApplicationController
 
    def give_us_your_feedback
      #code
+   end
+
+   private
+
+   def set_property
+     @property = Property.find(params[:id])
    end
 
 end
