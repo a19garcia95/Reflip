@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Flipthis" %></title>
-    <%= csrf_meta_tags %>
+ <head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title><%= content_for?(:title) ? yield(:title) : "Flipthis" %></title>
+   <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag "application", :media => "all" %>
+   <script src="https://use.fontawesome.com/4f85b13015.js"></script>
+
+   <%= stylesheet_link_tag "application", :media => "all" %>
 
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Monoton|Raleway" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Monoton|Raleway" rel="stylesheet">
+   <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
-    <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
-    <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
-    <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
-    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
-    <%= javascript_include_tag "application" %>
+   <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+   <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+   <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+   <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+   <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+   <%= javascript_include_tag "application" %>
 
-  </head>
-  <body>
+ </head>
+ <body>
 
-    <div class="navbar navbar-default navbar-static-top no-margin">
-      <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <button class="nav-btn">
-          <i class="fa fa-bars" aria-hidden="true"></i>
-        </button>
-        <a class="navbar-brand" href="#">Flipthis (missing LOGO)</a>
-          <div class="navbar-collapse collapse navbar-responsive-collapse">
-        </div>
-      </div>
-    </div>
+   <div class="navbar navbar-default navbar-static-top no-margin">
+     <div class="container">
+       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <button class="nav-btn">
+         <i class="fa fa-bars" aria-hidden="true"></i>
+       </button>
+       <a class="navbar-brand" href="#">Flipthis (missing LOGO)</a>
+         <div class="navbar-collapse collapse navbar-responsive-collapse">
+       </div>
+     </div>
+   </div>
 
-    <%= bootstrap_flash %>
+   <%= bootstrap_flash %>
 
-    <%= yield %>
+   <%= yield %>
 
-  </body>
+ </body>
 </html>

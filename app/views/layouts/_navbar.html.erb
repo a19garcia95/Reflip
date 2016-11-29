@@ -1,34 +1,53 @@
 <!-- Side NavBar -->
 
 <div class="col-sm-2 no-padding side-nav">
-  <nav class="nav-wrap">
-    <ul class="nav">
+ <nav class="nav-wrap">
+   <ul class="nav">
 
 
-    <li class="nav-group">
-      <a href="#" class="nav-text">Property Info</a>
-    </li>
+   <li class="nav-group" style="white-space: nowrap;">
+     <i class="fa fa-home house_icon" aria-hidden="true"></i>
+     <a href="property_info" class="nav-text">Property Info</a>
+   </li>
 
 
-
-    <li class="nav-group" action="/financialcosts" method="get">
-      <a class="nav-text"  data-toggle="modal" data-target="#analyzeModal">Analyze</a>
-    </li>
-
-
-    <li class="nav-group">
-      <a href="#" class="nav-text">Comparables (Zillow API)</a>
-    </li>
-
-    <li class="nav-group">
-      <a href="#" class="nav-text">Comparables (Between Properties Saved)</a>
-    </li>
-
-    <li class="nav-group" action='/googlemap' method='get'>
-      <a href="googlemap" class="nav-text">Google Satellite View</a>
-    </li>
+   <!-- <span style="white-space: nowrap;">
+           <i class="fa fa-external-link"></i>
+           some
+       </span>
+       very interesting Asteroids -->
 
 
-  </ul>
-  </nav>
+   <li class="nav-group" action="/financialcosts" method="get">
+     <a class="nav-text"  data-toggle="modal" data-target="#analyzeModal">Analyze</a>
+     <i class="fa fa-bar-chart" aria-hidden="true"></i>
+   </li>
+
+
+   <li class="nav-group">
+     <a href="#" class="nav-text">Comparables (Zillow API)</a>
+   </li>
+
+   <li class="nav-group">
+     <a href="#" class="nav-text">Comparables (Between Properties Saved)</a>
+   </li>
+
+   <li class="nav-group" action='/googlemap' method='get'>
+     <a href="googlemap" class="nav-text">Google Satellite View</a>
+     <i class="fa fa-globe" aria-hidden="true"></i>
+   </li>
+
+   <li class="nav-group">
+     <a href="googlemap" class="nav-text">Customer Support</a>
+     <i class="fa fa-comments" aria-hidden="true"></i>
+   </li>
+
+   <li class="nav-group" action='/feedback' method='get'>
+     <a href="feedback" class="nav-text">Give us your Feedback</a>
+     <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+   </li>
+
+
+ </ul>
+ </nav>
 </div>

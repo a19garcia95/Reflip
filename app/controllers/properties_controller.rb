@@ -8,16 +8,20 @@ class PropertiesController < ApplicationController
     @property = Property.build_from_api(params[:address], params[:citystatezip])
   end
 
-  def save
+  def analyze
+     #code
+   end
 
-  end
+   def results
+     #code
+   end
 
-  def create
+   def google_satellite_view
+     #code
+   end
 
-  end
-
-  def destroy
-
-  end
+   def give_us_your_feedback
+     #code
+   end
 
 end
