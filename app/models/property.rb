@@ -20,13 +20,17 @@ class Property < ApplicationRecord
     estimate = results["zestimate"]["amount"]["__content__"].to_i
     valuechange = results["zestimate"]["valueChange"]["__content__"].to_i
 
-
     create({estimate: estimate, zillow_id: zillow_id, street: street, city: city, state: state, zipcode: zipcode, latitude: latitude, longitude: longitude, sqft: sqft, baths:bathrooms, bedrooms: bedrooms, valuechange: valuechange})
   end
 
-  def chart
-    get_chart = "http://www.zillow.com/webservice/GetChart.htm?zws-id=X1-ZWz19hai5nqayz_6ttia&unit-type=percent&zpid=#{zillow_id}&width=300&height=150"
-    chart = HTTParty.get(get_chart)
+  def chart5year
+    get_chart = "http://www.zillow.com/webservice/GetChart.htm?zws-id=X1-ZWz19hai5nqayz_6ttia&unit-type=dollar&zpid=#{zillow_id}&width=600&height=300&chartDuration=5years"
+    chart = HTTParty.get(get_chart)['chart']['response']['url']
+  end
+
+  def chart10year
+    get_chart = "http://www.zillow.com/webservice/GetChart.htm?zws-id=X1-ZWz19hai5nqayz_6ttia&unit-type=dollarx&zpid=#{zillow_id}&width=600&height=300&chartDuration=10years"
+    chart = HTTParty.get(get_chart)['chart']['response']['url']
   end
 
   def comparibles
