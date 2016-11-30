@@ -179,7 +179,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt
+  bcrypt (~> 3.1.7)
   byebug
   coffee-rails (~> 4.2)
   gmaps4rails
