@@ -52,13 +52,6 @@ GEM
     commonjs (0.2.7)
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
-    devise (4.2.0)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 4.1.0, < 5.1)
-      responders
-      warden (~> 1.2.3)
-    devise-bootstrap-views (0.0.9)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.14)
@@ -101,7 +94,6 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
-    orm_adapter (0.5.0)
     pg (0.19.0)
     puma (3.6.2)
     rack (2.0.1)
@@ -139,8 +131,6 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
-    responders (2.3.0)
-      railties (>= 4.2.0, < 5.1)
     sass (3.4.22)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -176,8 +166,6 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.3)
       execjs (>= 0.3.0, < 3)
-    warden (1.2.6)
-      rack (>= 1.0)
     web-console (3.4.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -191,10 +179,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   byebug
   coffee-rails (~> 4.2)
-  devise
-  devise-bootstrap-views
   gmaps4rails
   hirb
   httparty
