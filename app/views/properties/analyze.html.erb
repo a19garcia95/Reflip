@@ -15,3 +15,223 @@
       <%= key["zestimate"]["amount"]["__content__"] %>
     </p>
   <% end %>
+
+  <div class="numbers">
+      $100,000
+    </div>
+    <div class="offer-hold">
+
+
+    </div>
+
+  <div class="all-costs-form">
+    <form action="/analyze" class="form-horizontal">
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Financial Costs
+              </a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div class="financial-body">
+              <div class="financial-content">
+                <div class="form-financial">
+                  <label for="">Zestimate</label>
+                  <div>
+                    <input class="allInputs" type="text" name="zestimate" value="" id="estimate">
+                  </div>
+                </div>
+                <div class="form-financial">
+                  <label for="">How Much Do You Want to Offer?</label>
+                  <div>
+                    <input class="allInputs" type="text" name="percent-offer" value="" id="percentOffer">
+                    <input class="allInputs" type="text" name="offer-price" value="" id="offerPrice">
+                  </div>
+                </div>
+                <div class="form-financial">
+                  <label for="">Estimated Hold time (months)</label>
+                  <div>
+                    <input class="allInputs" type="text" name="hold-time" value="" id="holdTime">
+                  </div>
+                </div>
+                <div class="form-financial">
+                  <label for="">Loan Amount</label>
+                  <div>
+                    <input class="allInputs" type="text" name="percent-loan" value="" id="percentLoan">
+                    <input class="allInputs" type="text" name="loan" value="" id="loanTotal">
+                  </div>
+                </div>
+                <div class="form-financial">
+                  <label for="">Loan Interest Rate</label>
+                  <div>
+                    <input class="allInputs" type="text" name="loan-rate-percent" value="" id="loanRatePercent">
+                  </div>
+                </div>
+              </div>
+              <div class="form-financial">
+                <label for="">Loan Cost</label>
+                <div>
+                  <input class="allInputs" type="text" name="loan-payment" value="" id="loanPayment">
+                  <input class="allInputs" type="text" name="loan-cost" value="" id="loanTotalCost">
+                </div>
+              </div>
+            </div>
+              <div class="financial-total">
+                total
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Holding Costs
+              </a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="holding-body">
+              <div class="holding-content">
+                <div class="form-holding">
+                  <label for="">Property Taxes</label>
+                  <div>
+                    <input class="holdingCostsYearly" type="text" name="property-taxes-yearly" value="" id="propertyTaxesYearly">
+                    <input class="holdingCostsMonthly" type="text" name="property-taxes-monthly" value="" id="propertyTaxesMonthly">
+                  </div>
+                </div>
+                <div class="form-holding">
+                  <label for="">HOA & Condo Fees</label>
+                  <div>
+                    <input class="holdingCostsYearly" type="text" name="hoa-yearly" value="" id="hoaYearly">
+                    <input class="holdingCostsMonthly" type="text" name="hoa-monthly" value="" id="hoaMonthly">
+                  </div>
+                </div>
+                <div class="form-holding">
+                  <label for="">Insurance Costs</label>
+                  <div>
+                    <input class="holdingCostsYearly" type="text" name="insurance-yearly" value="" id="insuranceYearly">
+                    <input class="holdingCostsMonthly" type="text" name="insurance-monthly" value="" id="insuranceMonthly">
+                  </div>
+                </div>
+                <div class="form-holding">
+                  <label for="">Miscellaneous Costs</label>
+                  <div>
+                    <input class="holdingCostsYearly" type="text" name="miscellaneous-yearly" value="" id="miscellaneousYearly">
+                    <input class="holdingCostsMonthly" type="text" name="miscellaneous-monthly" value="" id="miscellaneousMonthly">
+                  </div>
+                </div>
+                <div class="form-holding">
+                  <label for="">Total Holding Costs</label>
+                  <div>
+                    <input type="text" name="total-holding-cost-yearly" value="" id="totalHoldingCostYearly">
+                    <input type="text" name="total-holding-cost-monthly" value="" id="totalHoldingCostMonthly">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingThree">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Transaction Costs
+              </a>
+            </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div class="transaction-body">
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Buying Costs</h4>
+              </div>
+              <div class="buying-content">
+                <div class="form-buying">
+                  <label for="">Escrow / Attorney Fees</label>
+                  <div>
+                    <input type="text" name="" value="">
+                  </div>
+                </div>
+                <div class="form-buying">
+                  <label for="">Title Insurance / Search Costs</label>
+                  <div>
+                    <input type="text" name="" value="">
+                  </div>
+                </div>
+                <div class="form-buying">
+                  <label for="">Miscellaneous Buying Costs</label>
+                  <div>
+                    <input type="text" name="" value="">
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <h4 class="selling-title" id="myModalLabel">Selling Costs</h4>
+              </div>
+              <div class="selling-content">
+                <div class="form-selling">
+                  <label for="">Escrow / Attorney Fees</label>
+                  <div>
+                    <input type="text" name="" value="">
+                  </div>
+                </div>
+                <div class="form-selling">
+                  <label for="">Selling Recording Fees</label>
+                  <div>
+                    <input type="text" name="" value="">
+                  </div>
+                </div>
+                <div class="form-selling">
+                  <label for="">Realtor Fees</label>
+                  <div>
+                    <input type="text" name="" value="">
+                  </div>
+                </div>
+                <div class="form-selling">
+                  <label for="">Transfer & Conveyance Fees</label>
+                  <div>
+                    <input type="text" name="" value="">
+                  </div>
+                </div>
+                <div class="form-selling">
+                  <label for="">Home Warranty</label>
+                  <div>
+                    <input type="text" name="" value="">
+                  </div>
+                </div>
+                <div class="form-selling">
+                  <label for="">Marketing Costs</label>
+                  <div>
+                    <input type="text" name="" value="">
+                  </div>
+                </div>
+                <div class="form-selling">
+                  <label for="">Miscellaneous Costs</label>
+                  <div>
+                    <input type="text" name="" value="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingFour">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Repair Costs
+              </a>
+            </h4>
+          </div>
+          <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+            <div class="panel-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>

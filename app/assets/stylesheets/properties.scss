@@ -175,6 +175,8 @@ body {
   color: #fff;
 }
 
+// Show View CSS
+
 .property-display {
   margin: 0 auto;
   height: 20em;
@@ -189,11 +191,33 @@ body {
   width: 100%;
 }
 
-
-
-
 .trend {
   height: 30em;
   width: 100%;
   // background-color: yellow;
+}
+
+
+// Analyze View CSS
+
+
+.numbers {
+  margin: 0 auto;
+  height: 10em;
+  width: 80%;
+  background-color: rgb(245,245,245);
+  color: rgb(100,116,136);
+  font-weight: bolder;
+}
+
+.offer-hold {
+  margin: 0 auto;
+  width: 80%;
+  height: 5em;
+  background-color: red;
+}
+
+.all-costs-form {
+  margin: 0 auto;
+  width: 80%;
 }
