@@ -26,10 +26,10 @@ class PropertiesController < ApplicationController
    end
 
 
-  #  private
+   private
 
-  #  def set_property
-  #    @property = Property.find(params[:id])
-  #  end
+   def set_property
+     @property = Property.find(params[:id])
+   end
 
 end
