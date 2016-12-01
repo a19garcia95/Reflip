@@ -25,10 +25,11 @@ class PropertiesController < ApplicationController
      #code
    end
 
-   private
 
-   def set_property
-     @property = Property.find(params[:id])
-   end
+  #  private
+
+  #  def set_property
+  #    @property = Property.find(params[:id])
+  #  end
 
 end
