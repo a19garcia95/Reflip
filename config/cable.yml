@@ -1,9 +1,13 @@
 development:
-  adapter: async
+ adapter: redis
+ url: redis://localhost:6379/1
 
 test:
-  adapter: async
+ adapter: async
 
 production:
-  adapter: redis
-  url: redis://localhost:6379/1
+ adapter: redis
+ url: redis://redistogo:b00a2d3e38c8edd29ff1460801a5de08@crestfish.redistogo.com:10620/
+ #heroku action_cable
+ #change this url, because this one belongs to alejandro
+ 
