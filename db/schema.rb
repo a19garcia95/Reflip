@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161130224006) do
+ActiveRecord::Schema.define(version: 20161130235522) do
 
   create_table "properties", force: :cascade do |t|
     t.string   "address"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(version: 20161130224006) do
     t.string   "zipcode"
     t.string   "latitude"
     t.string   "longitude"
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_properties_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

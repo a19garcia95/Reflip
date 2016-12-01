@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :users
 
   get '/properties', to: 'properties#show'
-  get '/analyze/:id', to: 'properties#analyze'
-
+  # get '/analyze/:id', to: 'properties#analyze'
+  get '/signup', to: 'users#new'
 end
