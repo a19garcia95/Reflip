@@ -17,15 +17,52 @@
   <% end %>
 
   <div class="numbers">
-      $100,000
+    <div class="numbers-all">
+      <div class="numbers-all-costs" id="financial-total-cost">
+        <span id="financialTotalCost">$0.00</span>
+      </div>
+      <div class="numbers-all-costs" id="holding-total-cost">
+        <span id="holdingTotalCost">$0.00</span>
+      </div>
+      <div class="numbers-all-costs" id="transaction-total-cost">
+        <span id="transactionTotalCost">$0.00</span>
+      </div>
+      <div class="numbers-all-costs" id="repairs-total-cost">
+        <span id="repairTotalCost">$0.00</span>
+      </div>
+      <div class="numbers-all-costs" id="total-total-cost">
+        <span id="allCostsTotal">$0.00</span>
+      </div>
     </div>
-    <div class="offer-hold">
+  </div>
 
 
-    </div>
-
-  <div class="all-costs-form">
+  <div class="all-costs-form" id="analyzeModal">
     <form action="/analyze" class="form-horizontal">
+      <div class="offer-hold">
+        <div class="form-financial">
+          <label for="">Zestimate</label>
+          <div>
+            $
+            <input class="allInputs" type="text" name="zestimate" value="" id="estimate" style="color:black;">
+          </div>
+        </div>
+        <div class="how-much-offer">
+          <label for="">How Much Do You Want to Offer?</label>
+          <div>
+            %
+            <input class="mytext allInputs" type="text" name="percent-offer" value="" id="percentOffer" style="color:black;">
+            $
+            <input class="allInputs" type="text" name="offer-price" value="" id="offerPrice">
+          </div>
+        </div>
+        <div class="estimated-hold-time">
+          <label for="">Estimated Hold time (months)</label>
+          <div>
+            <input class="mytext allInputs" type="text" name="hold-time" value="" id="holdTime" style="color:black;">
+          </div>
+        </div>
+      </div>
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <div class="panel panel-default">
           <div class="panel-heading" role="tab" id="headingOne">
@@ -39,34 +76,18 @@
             <div class="financial-body">
               <div class="financial-content">
                 <div class="form-financial">
-                  <label for="">Zestimate</label>
-                  <div>
-                    <input class="allInputs" type="text" name="zestimate" value="" id="estimate">
-                  </div>
-                </div>
-                <div class="form-financial">
-                  <label for="">How Much Do You Want to Offer?</label>
-                  <div>
-                    <input class="allInputs" type="text" name="percent-offer" value="" id="percentOffer">
-                    <input class="allInputs" type="text" name="offer-price" value="" id="offerPrice">
-                  </div>
-                </div>
-                <div class="form-financial">
-                  <label for="">Estimated Hold time (months)</label>
-                  <div>
-                    <input class="allInputs" type="text" name="hold-time" value="" id="holdTime">
-                  </div>
-                </div>
-                <div class="form-financial">
                   <label for="">Loan Amount</label>
                   <div>
+                    %
                     <input class="allInputs" type="text" name="percent-loan" value="" id="percentLoan">
+                    $
                     <input class="allInputs" type="text" name="loan" value="" id="loanTotal">
                   </div>
                 </div>
                 <div class="form-financial">
                   <label for="">Loan Interest Rate</label>
                   <div>
+                    %
                     <input class="allInputs" type="text" name="loan-rate-percent" value="" id="loanRatePercent">
                   </div>
                 </div>
@@ -74,7 +95,9 @@
               <div class="form-financial">
                 <label for="">Loan Cost</label>
                 <div>
-                  <input class="allInputs" type="text" name="loan-payment" value="" id="loanPayment">
+                  $
+                  <input class="allInputs costsTotal" type="text" name="loan-payment" value="" id="loanPayment">
+                  $
                   <input class="allInputs" type="text" name="loan-cost" value="" id="loanTotalCost">
                 </div>
               </div>
@@ -127,8 +150,8 @@
                 <div class="form-holding">
                   <label for="">Total Holding Costs</label>
                   <div>
-                    <input type="text" name="total-holding-cost-yearly" value="" id="totalHoldingCostYearly">
-                    <input type="text" name="total-holding-cost-monthly" value="" id="totalHoldingCostMonthly">
+                    <input class="costsTotal" type="text" name="total-holding-cost-yearly" id="totalHoldingCostYearly">
+                    <input type="text" name="total-holding-cost-monthly" id="totalHoldingCostMonthly">
                   </div>
                 </div>
               </div>
@@ -152,19 +175,25 @@
                 <div class="form-buying">
                   <label for="">Escrow / Attorney Fees</label>
                   <div>
-                    <input type="text" name="" value="">
+                    <input class="totalBuyingCosts" type="text" name="escrow-attorney-fees-buying" value="" id="escrowAttorneyFeesBuying">
                   </div>
                 </div>
                 <div class="form-buying">
                   <label for="">Title Insurance / Search Costs</label>
                   <div>
-                    <input type="text" name="" value="">
+                    <input class="totalBuyingCosts" type="text" name="title-insurance-cost-buying" value="" id="titleInsuranceCostBuying">
                   </div>
                 </div>
                 <div class="form-buying">
                   <label for="">Miscellaneous Buying Costs</label>
                   <div>
-                    <input type="text" name="" value="">
+                    <input class="totalBuyingCosts" type="text" name="miscellaneous-buying-cost" value="" id="miscellaneousBuyingCost">
+                  </div>
+                </div>
+                <div class="form-buying">
+                  <label for="">Total Buying Costs</label>
+                  <div>
+                    <input class="totalBuyingSelling" type="text" name="total-buying-cost" value="" id="totalBuyingCost">
                   </div>
                 </div>
               </div>
@@ -175,45 +204,60 @@
                 <div class="form-selling">
                   <label for="">Escrow / Attorney Fees</label>
                   <div>
-                    <input type="text" name="" value="">
+                    <input class="totalSellingCosts" type="text" name="escrow-attorney-fees-selling" value="" id="escrowAttorneyFeesSelling">
                   </div>
                 </div>
                 <div class="form-selling">
                   <label for="">Selling Recording Fees</label>
                   <div>
-                    <input type="text" name="" value="">
+                    <input class="totalSellingCosts" type="text" name="selling-recording-fees" value="" id="sellingRecordingFees">
                   </div>
                 </div>
                 <div class="form-selling">
                   <label for="">Realtor Fees</label>
                   <div>
-                    <input type="text" name="" value="">
+                    <input class="totalSellingCosts" type="text" name="realtor-fees" value="" id="realtorFees">
                   </div>
                 </div>
                 <div class="form-selling">
                   <label for="">Transfer & Conveyance Fees</label>
                   <div>
-                    <input type="text" name="" value="">
+                    <input class="totalSellingCosts" type="text" name="transfer-conveyance-fees" value="" id="transferConveyanceFees">
                   </div>
                 </div>
                 <div class="form-selling">
                   <label for="">Home Warranty</label>
                   <div>
-                    <input type="text" name="" value="">
+                    <input class="totalSellingCosts" type="text" name="home-warranty-cost" value="" id="homeWarrantyCost">
                   </div>
                 </div>
                 <div class="form-selling">
                   <label for="">Marketing Costs</label>
                   <div>
-                    <input type="text" name="" value="">
+                    <input class="totalSellingCosts" type="text" name="marketing-costs-selling" value="" id="marketingCostSelling">
                   </div>
                 </div>
                 <div class="form-selling">
                   <label for="">Miscellaneous Costs</label>
                   <div>
-                    <input type="text" name="" value="">
+                    <input class="totalSellingCosts" type="text" name="miscellaneous-costs-selling" value="" id="miscellaneousCostSelling">
                   </div>
                 </div>
+                <div class="form-selling">
+                  <label for="">Total Selling Costs</label>
+                  <div>
+                    <input class="totalBuyingSelling" type="text" name="total-selling-cost" value="" id="totalSellingCost">
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <h4 class="selling-title" id="myModalLabel">Total Transaction Costs</h4>
+              </div>
+              <div class="total-transaction-content">
+                <div class="form-selling-buying">
+                  <div>
+                    <input class="costsTotal" type="text" name="total-transaction-cost" value="" id="totalTransactionCost">
+                  </div>
               </div>
             </div>
           </div>
@@ -227,8 +271,117 @@
             </h4>
           </div>
           <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-            <div class="panel-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            <div class="repair-body">
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Exterior</h4>
+              </div>
+              <div class="exterior-repair-content">
+                <div class="form-repair">
+                  <label for="">Roof</label>
+                  <div>
+                    <input class="totalExteriorCosts" type="text" name="roof-repair-cost" value="" id="roofRepairCost">
+                  </div>
+                </div>
+                <div class="form-repair">
+                  <label for="">Painting</label>
+                  <div>
+                    <input class="totalExteriorCosts" type="text" name="painting-repair-cost" value="" id="paintingRepairCost">
+                  </div>
+                </div>
+                <div class="form-repair">
+                  <label for="">Windows</label>
+                  <div>
+                    <input class="totalExteriorCosts" type="text" name="windows-repair-cost" value="" id="windowsRepairCost">
+                  </div>
+                </div>
+                <div class="form-repair">
+                  <label for="">Landscaping</label>
+                  <div>
+                    <input class="totalExteriorCosts" type="text" name="landscaping-repair-cost" value="" id="landscapingRepairCost">
+                  </div>
+                </div>
+                <div class="form-repair">
+                  <label for="">Total Exterior Costs</label>
+                  <div>
+                    <input class="totalExteriorInteriorRepair" type="text" name="total-exterior-repair-cost" value="" id="totalExteriorRepairCost">
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <h4 class="selling-title" id="myModalLabel">Interior</h4>
+              </div>
+              <div class="interior-repair-content">
+                <div class="form-repair">
+                  <label for="">Kitchen</label>
+                  <div>
+                    <input class="totalInteriorCosts" type="text" name="kitchen-repair-cost" value="" id="kitchenRepairCost">
+                  </div>
+                </div>
+                <div class="form-repair">
+                  <label for="">Bathrooms</label>
+                  <div>
+                    <input class="totalInteriorCosts" type="text" name="bathrooms-repair-cost" value="" id="bathroomsRepairCost">
+                  </div>
+                </div>
+                <div class="form-repair">
+                  <label for="">Flooring</label>
+                  <div>
+                    <input class="totalInteriorCosts" type="text" name="flooring-repair-cost" value="" id="flooringRepairCost">
+                  </div>
+                </div>
+                <div class="form-repair">
+                  <label for="">Electrical</label>
+                  <div>
+                    <input class="totalInteriorCosts" type="text" name="electrical-repair-cost" value="" id="electricalRepairCost">
+                  </div>
+                </div>
+                <div class="form-repair">
+                  <label for="">Plumbing</label>
+                  <div>
+                    <input class="totalInteriorCosts" type="text" name="plumbing-repair-cost" value="" id="plumbingRepairCost">
+                  </div>
+                </div>
+                <div class="form-repair">
+                  <label for="">Painting</label>
+                  <div>
+                    <input class="totalInteriorCosts" type="text" name="painting-repair-cost" value="" id="paintingRepairCost">
+                  </div>
+                </div>
+                <div class="form-repair">
+                  <label for="">Total Interior Costs</label>
+                  <div>
+                    <input class="totalExteriorInteriorRepair" type="text" name="total-interior-repair-cost" value="" id="totalInteriorRepairCost">
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <h4 class="selling-title" id="myModalLabel">Total Repair Costs</h4>
+              </div>
+              <div class="total-repair-content">
+                <div class="form-repair">
+                  <div>
+                    <input class="costsTotal" type="text" name="total-repair-cost" value="" id="totalRepairCost">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingFive">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Total Costs
+              </a>
+            </h4>
+          </div>
+          <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+            <div class="repair-body">
+              <div class="all-total-content">
+                <div>
+                  <input type="text" name="total-all-cost" value="" id="totalAllCost">
+                </div>
+              </div>
             </div>
           </div>
         </div>

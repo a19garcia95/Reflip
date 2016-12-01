@@ -207,17 +207,60 @@ body {
   width: 80%;
   background-color: rgb(245,245,245);
   color: rgb(100,116,136);
-  font-weight: bolder;
 }
+
+.numbers-all {
+  font-weight: bolder;
+  font-size: 40px;
+  display: inline-flex;
+  padding-top: 1em;
+  width: 100%;
+  padding: 1em;
+}
+
+.numbers-all-costs {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+}
+
+#holding-total-cost {
+border-left: 2px solid #ADB2B5;
+}
+
+#transaction-total-cost {
+border-left: 2px solid #ADB2B5;
+}
+
+#repairs-total-cost {
+border-left: 2px solid #ADB2B5;
+}
+
+#total-total-cost {
+border-left: 2px solid #ADB2B5;
+}
+
 
 .offer-hold {
-  margin: 0 auto;
-  width: 80%;
   height: 5em;
-  background-color: red;
+  background-color: #304362;
+  display: flex;
+  color: white;
+  justify-content: space-around;
 }
 
+.mytext {
+    width: 50px;
+}
 .all-costs-form {
   margin: 0 auto;
   width: 80%;
+}
+
+#offerPrice {
+  border: none;
+  background: inherit;
+}
+
+.selling-title {
+  display: flex;
 }
