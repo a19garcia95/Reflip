@@ -1,5 +1,12 @@
 source 'https://rubygems.org'
 
+gem 'figaro'
+
+gem 'stripe'
+
+gem 'mail_form'
+gem 'simple_form'
+
 gem 'redis', '~> 3.2'
 
 gem 'devise'

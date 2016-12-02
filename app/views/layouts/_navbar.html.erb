@@ -18,11 +18,43 @@
        very interesting Asteroids -->
 
 
-   <li class="nav-group" action="/analyze" method="get">
+   <li class="nav-group">
      <!-- <a class="nav-text"  data-toggle="modal" data-target="#analyzeModal">Analyze</a> -->
-     <a href="analyze/<%= @property.id %>" class="nav-text">Analyze</a>
+     <!-- <a href="analyze/<%= @property.id %>" class="nav-text">Analyze</a> -->
+     <%= link_to 'Analyze', analyze_path(@property), class: 'nav-text'%>
      <!-- <a href="analyze" class="nav-text">Analyze</a> -->
      <i class="fa fa-bar-chart" aria-hidden="true"></i>
+   </li>
+
+   <li class="nav-group">
+     <!-- <a href="googlemap" class="nav-text">Google Satellite View</a> -->
+     <%= link_to 'Google Satellite View', googlemap_path, class: 'nav-text'%>
+     <i class="fa fa-globe" aria-hidden="true"></i>
+   </li>
+
+   <li class="nav-group">
+     <!-- <a href="chat_rooms" class="nav-text">Customer Support</a> -->
+     <%= link_to 'Customer Support', chat_rooms_path, class: 'nav-text' %>
+     <i class="fa fa-comments" aria-hidden="true"></i>
+   </li>
+
+
+   <li class="nav-group">
+     <!-- <a href="contacts" class="nav-text">Give us your Feedback</a> -->
+     <%= link_to 'Give us your Feedback', contacts_path, class: 'nav-text' %>
+     <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+   </li>
+
+
+   <li class="nav-group">
+     <!-- <a href="videochat" class="nav-text">Video Chat</a> -->
+     <%= link_to 'Video Chat', videochat_path, class: 'nav-text' %>
+     <i class="fa fa-comments" aria-hidden="true"></i>
+   </li>
+
+   <li class="nav-group">
+     <!-- <a href="research" class="nav-text">Extensive Analytics</a> -->
+     <%= link_to 'Extensive Analytics', extensive_path, class: 'nav-text' %>
    </li>
 
 
@@ -32,26 +64,6 @@
 
    <li class="nav-group">
      <a href="#" class="nav-text">Comparables (Between Properties Saved)</a>
-   </li>
-
-   <li class="nav-group" action='/googlemap' method='get'>
-     <a href="googlemap" class="nav-text">Google Satellite View</a>
-     <i class="fa fa-globe" aria-hidden="true"></i>
-   </li>
-
-   <li class="nav-group" action='/chat_rooms' method='get'>
-     <a href="chat_rooms" class="nav-text">Customer Support</a>
-     <i class="fa fa-comments" aria-hidden="true"></i>
-   </li>
-
-   <li class="nav-group" action='/feedback' method='get'>
-     <a href="feedback" class="nav-text">Give us your Feedback</a>
-     <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-   </li>
-
-   <li class="nav-group" action="/videochat" method='get'>
-     <a href="videochat" class="nav-text">Video Chat</a>
-     <i class="fa fa-comments" aria-hidden="true"></i>
    </li>
 
 

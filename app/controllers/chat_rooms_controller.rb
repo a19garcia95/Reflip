@@ -1,4 +1,5 @@
 class ChatRoomsController < ApplicationController
+  before_action :authenticate_person! 
 
  def show
    @chat_room = ChatRoom.includes(:messages).find_by(id: params[:id])
@@ -14,7 +15,6 @@ class ChatRoomsController < ApplicationController
  end
 
  def create
-  #  @chat_room = current_user.chat_rooms.build(chat_room_params)
    @chat_room = current_person.chat_rooms.build(chat_room_params)
    if @chat_room.save
      flash[:success] = 'Chat room added!'
