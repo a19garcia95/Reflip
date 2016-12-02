@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'pg'
+
 gem 'figaro'
 
 gem 'stripe'
@@ -61,7 +63,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+
   gem 'rails_12factor'
 end
 
