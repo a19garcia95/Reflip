@@ -1,6 +1,6 @@
 Rails.application.configure do
- config.web_socket_server_url = "wss://infinite-badlands-62092.herokuapp.com/cable"
- config.action_cable.allowed_request_origins = ['https://infinite-badlands-62092.herokuapp.com', 'http://infinite-badlands-62092.herokuapp.com']
+ config.web_socket_server_url = "wss://glacial-harbor-53061.herokuapp.com/cable"
+ config.action_cable.allowed_request_origins = ['https://glacial-harbor-53061.herokuapp.com', 'http://glacial-harbor-53061.herokuapp.com']
 
 
  # Settings specified here will take precedence over those in config/application.rb.

@@ -217,3 +217,5 @@ $(document).on("turbolinks:load", function(){
       $("#allCostsTotal").text('$'+ $(this).val());
     });
    });
+
+  //  .toFixed[3]
