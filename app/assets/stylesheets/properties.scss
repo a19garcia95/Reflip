@@ -71,47 +71,101 @@ div.search-button {
 
 // SHOW VIEW STYLESHEETS
 
-.house_image {
-
+.property-display {
+ margin: 0 auto;
+ height: 20em;
+ width: 80%;
 }
 
-.property_info {
- margin-left: 450px;
+.property-info {
+ background: linear-gradient(
+     rgba(0, 0, 0, 0.6),
+     rgba(0, 0, 0, 0.6)
+   ),
+   url('http://www.costamiamihomes.com/assets/condo-images/echo-brickell-miami_3.jpg')
+no-repeat;
+ background-size: 100% 100%;
+ height: 20em;
+ font-family: 'Roboto', sans-serif;
 }
 
-.change_in_value {
- margin-top: 20px;
- margin-left: 450px;
+div.info {
+ position: absolute;
+ color: white;
 }
 
-.square_footage {
- margin-top: 20px;
- margin-left: 450px;
+.trend {
+ height: 30em;
+ width: 100%;
 }
 
-.bathrooms {
- margin-top: 20px;
- margin-left: 450px;
+.property-address {
+ margin: 30px 0 0 60px;
 }
 
-.bedrooms {
- margin-top: 20px;
- margin-left: 450px;
+.property-address h1 {
+ margin: 0;
 }
 
-.estimate {
- margin-top: 20px;
- margin-left: 450px;
+.property-details {
+ display: inline-flex;
+ margin: 2em 0 0 30px;
+ font-size: 30px;
 }
 
-.feedback_input {
- margin-top: 20px;
- // margin-left: 100px;
+.field-description {
+ padding: 0 30px;
+ border-right: 2px white solid;
 }
 
-.feedback_send {
- margin-top: 20px;
+.description {
+ font-size: 15px;
 }
+
+.sqft {
+ border-right: none;
+}
+// .house_image {
+//
+// }
+//
+// .property_info {
+//  margin-left: 450px;
+// }
+//
+// .change_in_value {
+//  margin-top: 20px;
+//  margin-left: 450px;
+// }
+//
+// .square_footage {
+//  margin-top: 20px;
+//  margin-left: 450px;
+// }
+//
+// .bathrooms {
+//  margin-top: 20px;
+//  margin-left: 450px;
+// }
+//
+// .bedrooms {
+//  margin-top: 20px;
+//  margin-left: 450px;
+// }
+//
+// .estimate {
+//  margin-top: 20px;
+//  margin-left: 450px;
+// }
+//
+// .feedback_input {
+//  margin-top: 20px;
+//  // margin-left: 100px;
+// }
+//
+// .feedback_send {
+//  margin-top: 20px;
+// }
 
 
 
@@ -143,7 +197,7 @@ body {
   background-color: #304362;
   margin: 0;
   top: 0;
-  padding: 2.5em;
+  padding: 1em;
   padding-top: 5em;
   list-style: none;
   z-index: 100;
@@ -153,7 +207,7 @@ body {
 }
 
 .nav-btn {
-  margin-left: -18em;
+  margin-left: -15em;
   margin-top: 0.8em;
   left: 100%;
   background-color: inherit;
@@ -165,6 +219,7 @@ body {
   color: #304362;
 }
 
+
 .nav-group {
   margin: 0 0 2em 0;
   padding-left: 2em;
@@ -173,30 +228,32 @@ body {
 .nav-text {
   text-decoration: none;
   color: #fff;
+  padding-left: 1em;
 }
 
-// Show View CSS
-
-.property-display {
-  margin: 0 auto;
-  height: 20em;
-  width: 80%;
-  background-color: grey;
-}
-
-.property-info {
-  background: url('http://www.costamiamihomes.com/assets/condo-images/echo-brickell-miami_3.jpg') no-repeat;
-  background-size: 100% 100%;
-  // opacity: 0.4;
-  height: 20em;
-  width: 100%;
-}
-
-.trend {
-  height: 30em;
-  width: 100%;
-  // background-color: yellow;
-}
+// // Show View CSS
+//
+// .property-display {
+//   margin: 0 auto;
+//   height: 20em;
+//   width: 80%;
+//   background-color: grey;
+// }
+//
+// .property-info {
+//   background: url('http://www.costamiamihomes.com/assets/condo-images/echo-brickell-miami_3.jpg') no-repeat;
+//   background-size: 100% 100%;
+//   // opacity: 0.4;
+//   height: 20em;
+//   width: 100%;
+//   color: white;
+// }
+//
+// .trend {
+//   height: 30em;
+//   width: 100%;
+//   // background-color: yellow;
+// }
 
 
 // Analyze View CSS
@@ -217,6 +274,7 @@ body {
   padding-top: 1em;
   width: 100%;
   padding: 1em;
+  padding-left: 2em;
 }
 
 .numbers-all-costs {
@@ -240,9 +298,17 @@ border-left: 2px solid #ADB2B5;
 border-left: 2px solid #ADB2B5;
 }
 
+.how-much-offer {
+  // padding-top: 2em;
+  font-size: 18px;
+}
+
+.offerHowMuch {
+  padding-top: 1em;
+}
 
 .offer-hold {
-  height: 5em;
+  height: 9em;
   background-color: #304362;
   display: flex;
   color: white;
@@ -260,8 +326,37 @@ border-left: 2px solid #ADB2B5;
 #offerPrice {
   border: none;
   background: inherit;
+  font-size: 30px;
 }
 
+#percentOffering{
+  padding-left: 1em;
+}
+
+.offerInputs {
+  padding-top: 1em;
+}
+
+.estimated-hold-time {
+  font-size: 18px;
+  padding-top: 2em;
+}
 .selling-title {
   display: flex;
+}
+
+#loanTotal {
+  border: none;
+}
+
+#loanTotalCost {
+  border: none;
+}
+
+.holdingCostsMonthly {
+  border: none;
+}
+
+#totalHoldingCostMonthly {
+  border: none;
 }

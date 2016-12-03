@@ -8,7 +8,6 @@ class Property < ApplicationRecord
     citystatezip = citystatezip.to_s.gsub(" ", "+").gsub(/,/,"%2C")
     zillow_api = "http://www.zillow.com/webservice/GetDeepSearchResults.htm?zws-id=X1-ZWz19hai5nqayz_6ttia&address=#{address}&citystatezip=#{citystatezip}"
     results = HTTParty.get(zillow_api)["searchresults"]["response"]["results"]["result"]
-    puts "==================================#{results}"
 
     zillow_id = results["zpid"].to_i
     street = results["address"]["street"]

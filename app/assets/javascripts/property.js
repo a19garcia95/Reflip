@@ -20,28 +20,45 @@ $(document).ready(function(){
 
 // MATH for Financial Costs
 
+// $(document).on("turbolinks:load", function(){
+//   $(document).on('keyup', '#percentOffer', function(){
+//     var offerPercent = Number($('#percentOffer').val()) * 0.01
+//     var offerPrice = Number($('#estimate').val()) * offerPercent
+//     $('#offerPrice').val(offerPrice)
+//   });
+// });
+
+
+
 $(document).on("turbolinks:load", function(){
   $(document).on('keyup', '#percentOffer', function(){
     var offerPercent = Number($('#percentOffer').val()) * 0.01
-    var offerPrice = Number($('#estimate').val()) * offerPercent
-    $('#offerPrice').val(offerPrice)
+    var noString = $("#zestimate").text();
+    var value = noString.replace(/[$]/, "").replace(",", "").replace(",", "")
+    var valueClean = parseFloat(value);
+    var offerPrice = valueClean * offerPercent
+    $('#offerPrice').val(offerPrice.toFixed(2))
   });
 });
+
 
 $(document).on("turbolinks:load", function(){
   $(document).on('keyup', '#percentLoan', function(){
     var loanPercent = Number($('#percentLoan').val()) * 0.01
-    var totalLoan = Number($('#estimate').val()) * loanPercent
-    $('#loanTotal').val(totalLoan)
+    var offerPrice = Number($('#offerPrice').val());
+    var totalLoan = loanPercent * offerPrice;
+    $('#loanTotal').val(totalLoan.toFixed(2));
   });
 });
+
+
 
 $(document).on("turbolinks:load", function(){
   $(document).on('keyup', '#loanRatePercent', function(){
     var loanRate = Number($('#loanRatePercent').val()) * 0.01
     var totalLoan = Number($('#loanTotal').val())
     var loanPayment = ((totalLoan * loanRate) + totalLoan) / 12
-    $('#loanPayment').val(loanPayment)
+    $('#loanPayment').val(loanPayment.toFixed(2));
   });
 });
 
@@ -52,7 +69,7 @@ $(document).on("turbolinks:load", function(){
     var holdTime = Number($('#holdTime').val())
     var loanPayment = ((totalLoan * loanRate) + totalLoan) / 12
     var totalLoanPayment = loanPayment * holdTime
-    $('#loanTotalCost').val(totalLoanPayment)
+    $('#loanTotalCost').val(totalLoanPayment.toFixed(2));
   });
 });
 
@@ -63,7 +80,7 @@ $(document).on("turbolinks:load", function(){
     $(document).on('keyup', '#propertyTaxesYearly', function(){
       var propertyTaxesYearly = Number($('#propertyTaxesYearly').val())
       var propertyTaxesMonthly = propertyTaxesYearly / 12
-      $('#propertyTaxesMonthly').val(propertyTaxesMonthly)
+      $('#propertyTaxesMonthly').val(propertyTaxesMonthly.toFixed(2));
     });
   });
 
@@ -71,7 +88,7 @@ $(document).on("turbolinks:load", function(){
     $(document).on('keyup', '#hoaYearly', function(){
       var hoaYearly = Number($('#hoaYearly').val())
       var hoaMonthly = hoaYearly / 12
-      $('#hoaMonthly').val(hoaMonthly)
+      $('#hoaMonthly').val(hoaMonthly.toFixed(2));
     });
   });
 
@@ -79,7 +96,7 @@ $(document).on("turbolinks:load", function(){
     $(document).on('keyup', '#insuranceYearly', function(){
       var insuranceYearly = Number($('#insuranceYearly').val())
       var insuranceMonthly = insuranceYearly / 12
-      $('#insuranceMonthly').val(insuranceMonthly)
+      $('#insuranceMonthly').val(insuranceMonthly.toFixed(2));
     });
   });
 
@@ -87,7 +104,7 @@ $(document).on("turbolinks:load", function(){
     $(document).on('keyup', '#miscellaneousYearly', function(){
       var miscellaneousYearly = Number($('#miscellaneousYearly').val())
       var miscellaneousMonthly = miscellaneousYearly / 12
-      $('#miscellaneousMonthly').val(miscellaneousMonthly)
+      $('#miscellaneousMonthly').val(miscellaneousMonthly.toFixed(2));
     });
   });
 
@@ -103,16 +120,9 @@ $(document).on("turbolinks:load", function(){
 //Total Holding Cost Monthly
 $(document).on("keyup", '#totalHoldingCostYearly', function() {
   var totalHoldingCostYearly = Number($('#totalHoldingCostYearly').val()) / 12
-  $('#totalHoldingCostMonthly').val(totalHoldingCostYearly);
+  $('#totalHoldingCostMonthly').val(totalHoldingCostYearly.toFixed(2));
 });
 
-  // $(document).on("blur", ".holdingCostsMonthly", function() {
-  //     var sum = 0;
-  //     $(".holdingCostsMonthly").each(function(){
-  //         sum += +$(this).val();
-  //     });
-  //     $('#totalHoldingCostMonthly').val(sum);
-  // });
 
 //MATH for Transaction Costs
 
@@ -172,6 +182,15 @@ $(document).on("keyup", ".totalExteriorInteriorRepair", function() {
   $('#totalRepairCost').val(sum);
 });
 
+
+// Amount Invested
+$(document).on("keyup", "#loanTotal", function() {
+  var offerPrice = Number($('#offerPrice').val());
+  var loanTotal = Number($('#loanTotal').val());
+  var amountInvested = offerPrice - loanTotal;
+  $('#amountInvested').val(amountInvested);
+});
+
 // Total Costs
 $(document).on("keyup", ".costsTotal", function() {
   var sum = 0;
@@ -179,6 +198,30 @@ $(document).on("keyup", ".costsTotal", function() {
       sum += +$(this).val();
   });
   $('#totalAllCost').val(sum);
+});
+
+// Estimated Net Profit
+$(document).on("turbolinks:load", function(){
+  $(document).on('keydown', "#estimatedNetProfit", function(){
+    var offerPercent = Number($('#percentOffer').val()) * 0.01
+    var noString = $("#zestimate").text();
+    var value = noString.replace(/[$]/, "").replace(",", "").replace(",", "")
+    var zestimateVal = parseFloat(value);
+    var offerPrice = zestimateVal * offerPercent
+    var totalAllCost = Number($("#totalAllCost").val());
+    var estimatedNetProfit = zestimateVal - offerPrice - totalAllCost;
+    $("#estimatedNetProfit").val(estimatedNetProfit.toFixed(2));
+  });
+});
+
+// ROI
+$(document).on("turbolinks:load", function(){
+  $(document).on('keydown', "#returnOnInvestment", function(){
+    var estimatedNetProfit = Number($('#estimatedNetProfit').val());
+    var amountInvested = Number($('#amountInvested').val());
+    var returnOnInvestment = (estimatedNetProfit / amountInvested) * 100;
+    $("#returnOnInvestment").val(returnOnInvestment.toFixed(2));
+  });
 });
 
 // Dashboard Number Display
@@ -218,4 +261,16 @@ $(document).on("turbolinks:load", function(){
     });
    });
 
-  //  .toFixed[3]
+// Estimated Net Profit
+$(document).on("turbolinks:load", function(){
+  $(document).on('keydown', "#estimatedNetProfit", function(){
+    $("#profitEstimated").text('$'+ $(this).val());
+  });
+ });
+
+// ROI
+$(document).on("turbolinks:load", function(){
+  $(document).on('keydown', "#returnOnInvestment", function(){
+    $("#roiEstimated").text('%'+ $(this).val());
+  });
+ });

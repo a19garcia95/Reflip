@@ -1,30 +1,49 @@
 <%= render "layouts/navbar" %>
 
-<p>
-  This is the zillow ID: <%= @property.estimate %>
-  This is the zillow ID: <%= @property.zillow_id %>
-  This is the zillow ID: <%= @property.sqft %>
-  This is the zillow ID: <%= @property.baths %>
-  This is the zillow ID: <%= @property.bedrooms %>
-  This is the zillow ID: <%= @property.valuechange %>
-
-  <div class="">
-    <img src="<%= @property.chart5year %>" alt="" />
-  </div>
-
-
 <div class="col-sm-10 no-padding main-container">
-  <div class="property-display">
-    <div class="property-info">
-      Property Info
-    </div>
-  </div>
-  <!-- <div class="col-sm-4">
-    <div class="col-sm-6">Profit</div>
-    <div class="col-sm-6">ROI</div>
-  </div> -->
-  <div class="clearfix"></div>
-  <div class="trend">
-    Property Trend Chart
-  </div>
+ <div class="property-display">
+   <div class="property-info">
+
+     <div class="info">
+       <div class="property-address">
+         <h1><%=@property.street%></h1>
+         <h1><%=@property.city%>,
+             <%=@property.state%>
+             <%=@property.zipcode%></h1>
+       </div>
+
+       <div class="property-details">
+         <div class="field-description estimate">
+           <div id="zestimate"><%=number_to_currency(@property.estimate, precision: 0)%></div>
+           <div class="description">Estimate</div>
+         </div>
+
+         <div class="field-description beds">
+           <div><%= @property.bedrooms%></div>
+           <div class="description">Beds</div>
+         </div>
+
+         <div class="field-description baths">
+           <div><%= @property.baths%></div>
+           <div class="description">Baths</div>
+         </div>
+
+         <div class="field-description sqft">
+           <div><%=number_with_delimiter@property.sqft%></div>
+           <div class="description">Sq Ft</div>
+         </div>
+       </div>
+     </div>
+
+
+   </div>
+ </div>
+
+ <div class="clearfix"></div>
+ <div class="trend">
+   Property Trend Chart
+   <div class="">
+     <img src="<%= @property.chart5year %>" alt="" />
+   </div>
+ </div>
 </div>

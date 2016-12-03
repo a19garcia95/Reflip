@@ -3,7 +3,36 @@
 <div class="col-sm-10 no-padding main-container">
   <div class="property-display">
     <div class="property-info">
-      Property Info
+      <div class="info">
+        <div class="property-address">
+          <h1><%=@property.street%></h1>
+          <h1><%=@property.city%>,
+              <%=@property.state%>
+              <%=@property.zipcode%></h1>
+        </div>
+
+        <div class="property-details">
+          <div class="field-description estimate">
+            <div id="zestimate"><%=number_to_currency(@property.estimate, precision: 0)%></div>
+            <div class="description">Estimate</div>
+          </div>
+
+          <div class="field-description beds">
+            <div><%= @property.bedrooms%></div>
+            <div class="description">Beds</div>
+          </div>
+
+          <div class="field-description baths">
+            <div><%= @property.baths%></div>
+            <div class="description">Baths</div>
+          </div>
+
+          <div class="field-description sqft">
+            <div><%=number_with_delimiter@property.sqft%></div>
+            <div class="description">Sq Ft</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -33,26 +62,34 @@
 
   <div class="all-costs-form" id="analyzeModal">
     <form action="/analyze" class="form-horizontal">
+      <!-- <div class="form-financial">
+        <label for="">Zestimate</label>
+        <div>
+          $
+          <input class="allInputs" type="text" name="zestimate" value="" id="estimate" style="color:black;">
+        </div>
+      </div> -->
       <div class="offer-hold">
-        <div class="form-financial">
-          <label for="">Zestimate</label>
-          <div>
+
+        <div class="how-much-offer col-sm-6">
+          <div class="offerHowMuch col-sm-6">
+            <label for="">How Much Do You Want to Offer?</label>
+            <div id="percentOffering">
+              %
+              <input class="mytext allInputs" type="text" name="percent-offer" value="" id="percentOffer" style="color:black;">
+            </div>
+          </div>
+
+          <div class="offerInputs col-sm-6">
             $
-            <input class="allInputs" type="text" name="zestimate" value="" id="estimate" style="color:black;">
+              <input class="allInputs" type="text" name="offer-price" value="" id="offerPrice">
           </div>
         </div>
-        <div class="how-much-offer">
-          <label for="">How Much Do You Want to Offer?</label>
-          <div>
-            %
-            <input class="mytext allInputs" type="text" name="percent-offer" value="" id="percentOffer" style="color:black;">
-            $
-            <input class="allInputs" type="text" name="offer-price" value="" id="offerPrice">
+        <div class="estimated-hold-time col-sm-6">
+          <div class="estimatedHold col-sm-6">
+            <label for="">Estimated Hold time (months)</label>
           </div>
-        </div>
-        <div class="estimated-hold-time">
-          <label for="">Estimated Hold time (months)</label>
-          <div>
+          <div class="estimatedMonths col-sm-6">
             <input class="mytext allInputs" type="text" name="hold-time" value="" id="holdTime" style="color:black;">
           </div>
         </div>
@@ -96,9 +133,6 @@
                 </div>
               </div>
             </div>
-              <div class="financial-total">
-                total
-              </div>
             </div>
           </div>
 
@@ -116,35 +150,45 @@
                 <div class="form-holding">
                   <label for="">Property Taxes</label>
                   <div>
+                    $
                     <input class="holdingCostsYearly" type="text" name="property-taxes-yearly" value="" id="propertyTaxesYearly">
+                    $
                     <input class="holdingCostsMonthly" type="text" name="property-taxes-monthly" value="" id="propertyTaxesMonthly">
                   </div>
                 </div>
                 <div class="form-holding">
                   <label for="">HOA & Condo Fees</label>
                   <div>
+                    $
                     <input class="holdingCostsYearly" type="text" name="hoa-yearly" value="" id="hoaYearly">
+                    $
                     <input class="holdingCostsMonthly" type="text" name="hoa-monthly" value="" id="hoaMonthly">
                   </div>
                 </div>
                 <div class="form-holding">
                   <label for="">Insurance Costs</label>
                   <div>
+                    $
                     <input class="holdingCostsYearly" type="text" name="insurance-yearly" value="" id="insuranceYearly">
+                    $
                     <input class="holdingCostsMonthly" type="text" name="insurance-monthly" value="" id="insuranceMonthly">
                   </div>
                 </div>
                 <div class="form-holding">
                   <label for="">Miscellaneous Costs</label>
                   <div>
+                    $
                     <input class="holdingCostsYearly" type="text" name="miscellaneous-yearly" value="" id="miscellaneousYearly">
+                    $
                     <input class="holdingCostsMonthly" type="text" name="miscellaneous-monthly" value="" id="miscellaneousMonthly">
                   </div>
                 </div>
                 <div class="form-holding">
                   <label for="">Total Holding Costs</label>
                   <div>
+                    $
                     <input class="costsTotal" type="text" name="total-holding-cost-yearly" id="totalHoldingCostYearly">
+                    $
                     <input type="text" name="total-holding-cost-monthly" id="totalHoldingCostMonthly">
                   </div>
                 </div>
@@ -169,24 +213,28 @@
                 <div class="form-buying">
                   <label for="">Escrow / Attorney Fees</label>
                   <div>
+                    $
                     <input class="totalBuyingCosts" type="text" name="escrow-attorney-fees-buying" value="" id="escrowAttorneyFeesBuying">
                   </div>
                 </div>
                 <div class="form-buying">
                   <label for="">Title Insurance / Search Costs</label>
                   <div>
+                    $
                     <input class="totalBuyingCosts" type="text" name="title-insurance-cost-buying" value="" id="titleInsuranceCostBuying">
                   </div>
                 </div>
                 <div class="form-buying">
                   <label for="">Miscellaneous Buying Costs</label>
                   <div>
+                    $
                     <input class="totalBuyingCosts" type="text" name="miscellaneous-buying-cost" value="" id="miscellaneousBuyingCost">
                   </div>
                 </div>
                 <div class="form-buying">
                   <label for="">Total Buying Costs</label>
                   <div>
+                    $
                     <input class="totalBuyingSelling" type="text" name="total-buying-cost" value="" id="totalBuyingCost">
                   </div>
                 </div>
@@ -198,48 +246,56 @@
                 <div class="form-selling">
                   <label for="">Escrow / Attorney Fees</label>
                   <div>
+                    $
                     <input class="totalSellingCosts" type="text" name="escrow-attorney-fees-selling" value="" id="escrowAttorneyFeesSelling">
                   </div>
                 </div>
                 <div class="form-selling">
                   <label for="">Selling Recording Fees</label>
                   <div>
+                    $
                     <input class="totalSellingCosts" type="text" name="selling-recording-fees" value="" id="sellingRecordingFees">
                   </div>
                 </div>
                 <div class="form-selling">
                   <label for="">Realtor Fees</label>
                   <div>
+                    $
                     <input class="totalSellingCosts" type="text" name="realtor-fees" value="" id="realtorFees">
                   </div>
                 </div>
                 <div class="form-selling">
                   <label for="">Transfer & Conveyance Fees</label>
                   <div>
+                    $
                     <input class="totalSellingCosts" type="text" name="transfer-conveyance-fees" value="" id="transferConveyanceFees">
                   </div>
                 </div>
                 <div class="form-selling">
                   <label for="">Home Warranty</label>
                   <div>
+                    $
                     <input class="totalSellingCosts" type="text" name="home-warranty-cost" value="" id="homeWarrantyCost">
                   </div>
                 </div>
                 <div class="form-selling">
                   <label for="">Marketing Costs</label>
                   <div>
+                    $
                     <input class="totalSellingCosts" type="text" name="marketing-costs-selling" value="" id="marketingCostSelling">
                   </div>
                 </div>
                 <div class="form-selling">
                   <label for="">Miscellaneous Costs</label>
                   <div>
+                    $
                     <input class="totalSellingCosts" type="text" name="miscellaneous-costs-selling" value="" id="miscellaneousCostSelling">
                   </div>
                 </div>
                 <div class="form-selling">
                   <label for="">Total Selling Costs</label>
                   <div>
+                    $
                     <input class="totalBuyingSelling" type="text" name="total-selling-cost" value="" id="totalSellingCost">
                   </div>
                 </div>
@@ -250,6 +306,7 @@
               <div class="total-transaction-content">
                 <div class="form-selling-buying">
                   <div>
+                    $
                     <input class="costsTotal" type="text" name="total-transaction-cost" value="" id="totalTransactionCost">
                   </div>
               </div>
@@ -274,30 +331,35 @@
                 <div class="form-repair">
                   <label for="">Roof</label>
                   <div>
+                    $
                     <input class="totalExteriorCosts" type="text" name="roof-repair-cost" value="" id="roofRepairCost">
                   </div>
                 </div>
                 <div class="form-repair">
                   <label for="">Painting</label>
                   <div>
+                    $
                     <input class="totalExteriorCosts" type="text" name="painting-repair-cost" value="" id="paintingRepairCost">
                   </div>
                 </div>
                 <div class="form-repair">
                   <label for="">Windows</label>
                   <div>
+                    $
                     <input class="totalExteriorCosts" type="text" name="windows-repair-cost" value="" id="windowsRepairCost">
                   </div>
                 </div>
                 <div class="form-repair">
                   <label for="">Landscaping</label>
                   <div>
+                    $
                     <input class="totalExteriorCosts" type="text" name="landscaping-repair-cost" value="" id="landscapingRepairCost">
                   </div>
                 </div>
                 <div class="form-repair">
                   <label for="">Total Exterior Costs</label>
                   <div>
+                    $
                     <input class="totalExteriorInteriorRepair" type="text" name="total-exterior-repair-cost" value="" id="totalExteriorRepairCost">
                   </div>
                 </div>
@@ -309,42 +371,49 @@
                 <div class="form-repair">
                   <label for="">Kitchen</label>
                   <div>
+                    $
                     <input class="totalInteriorCosts" type="text" name="kitchen-repair-cost" value="" id="kitchenRepairCost">
                   </div>
                 </div>
                 <div class="form-repair">
                   <label for="">Bathrooms</label>
                   <div>
+                    $
                     <input class="totalInteriorCosts" type="text" name="bathrooms-repair-cost" value="" id="bathroomsRepairCost">
                   </div>
                 </div>
                 <div class="form-repair">
                   <label for="">Flooring</label>
                   <div>
+                    $
                     <input class="totalInteriorCosts" type="text" name="flooring-repair-cost" value="" id="flooringRepairCost">
                   </div>
                 </div>
                 <div class="form-repair">
                   <label for="">Electrical</label>
                   <div>
+                    $
                     <input class="totalInteriorCosts" type="text" name="electrical-repair-cost" value="" id="electricalRepairCost">
                   </div>
                 </div>
                 <div class="form-repair">
                   <label for="">Plumbing</label>
                   <div>
+                    $
                     <input class="totalInteriorCosts" type="text" name="plumbing-repair-cost" value="" id="plumbingRepairCost">
                   </div>
                 </div>
                 <div class="form-repair">
                   <label for="">Painting</label>
                   <div>
+                    $
                     <input class="totalInteriorCosts" type="text" name="painting-repair-cost" value="" id="paintingRepairCost">
                   </div>
                 </div>
                 <div class="form-repair">
                   <label for="">Total Interior Costs</label>
                   <div>
+                    $
                     <input class="totalExteriorInteriorRepair" type="text" name="total-interior-repair-cost" value="" id="totalInteriorRepairCost">
                   </div>
                 </div>
@@ -355,6 +424,7 @@
               <div class="total-repair-content">
                 <div class="form-repair">
                   <div>
+                    $
                     <input class="costsTotal" type="text" name="total-repair-cost" value="" id="totalRepairCost">
                   </div>
                 </div>
@@ -366,7 +436,7 @@
           <div class="panel-heading" role="tab" id="headingFive">
             <h4 class="panel-title">
               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                Total Costs
+                Financial Summary
               </a>
             </h4>
           </div>
@@ -374,7 +444,30 @@
             <div class="repair-body">
               <div class="all-total-content">
                 <div>
+                  <label for="">Amount Invested</label>
+                  $
+                  <input type="text" name="amount-invested" value="" id="amountInvested">
+                </div>
+              </div>
+              <div class="all-total-content">
+                <div>
+                  <label for="">Total Costs</label>
+                  $
                   <input type="text" name="total-all-cost" value="" id="totalAllCost">
+                </div>
+              </div>
+              <div class="all-total-content">
+                <div>
+                  <label for="">Estimated Net Profit</label>
+                  $
+                  <input type="text" name="estimated-net-profit" value="" id="estimatedNetProfit">
+                </div>
+              </div>
+              <div class="all-total-content">
+                <div>
+                  <label for="">Return On Investment</label>
+                  %
+                  <input type="text" name="return-on-investment" value="" id="returnOnInvestment">
                 </div>
               </div>
             </div>
