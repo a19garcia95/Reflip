@@ -1,6 +1,6 @@
 <%= render "layouts/navbar" %>
 
-<div class="col-sm-10 no-padding main-container">
+<div class="col-sm-10 col-sm-offset-2 no-padding main-container">
   <div class="property-display">
     <div class="property-info">
       <div class="info">
@@ -33,6 +33,21 @@
           </div>
         </div>
       </div>
+      <div class="results">
+       <div class="profit filter">
+         <h1>PROFIT</h1>
+       </div>
+       <div class="profit-result filter">
+         <span id="profitEstimated">$0.00</span>
+       </div>
+       <div class="roi filter">
+         <h1>ROI</h1>
+       </div>
+       <div class="roi-result filter">
+         <span id="roiEstimated">0.00%</span>
+       </div>
+     </div>
+
     </div>
   </div>
 
@@ -43,18 +58,23 @@
     <div class="numbers-all">
       <div class="numbers-all-costs" id="financial-total-cost">
         <span id="financialTotalCost">$0.00</span>
+        <div style="font-size:13px;">Monthly Loan Cost </div>
       </div>
       <div class="numbers-all-costs" id="holding-total-cost">
         <span id="holdingTotalCost">$0.00</span>
+        <div for="" style="font-size:13px;">Total Holding Costs </div>
       </div>
       <div class="numbers-all-costs" id="transaction-total-cost">
         <span id="transactionTotalCost">$0.00</span>
+        <div for="" style="font-size:13px;">Total Transaction Costs </div>
       </div>
       <div class="numbers-all-costs" id="repairs-total-cost">
         <span id="repairTotalCost">$0.00</span>
+        <div for="" style="font-size:13px;">Total Repair Costs </div>
       </div>
       <div class="numbers-all-costs" id="total-total-cost">
         <span id="allCostsTotal">$0.00</span>
+        <div for="" style="font-size:13px;">Total Costs </div>
       </div>
     </div>
   </div>
@@ -71,8 +91,8 @@
       </div> -->
       <div class="offer-hold">
 
-        <div class="how-much-offer col-sm-6">
-          <div class="offerHowMuch col-sm-6">
+        <div class="how-much-offer col-sm-8">
+          <div class="offerHowMuch col-sm-4">
             <label for="">How Much Do You Want to Offer?</label>
             <div id="percentOffering">
               %
@@ -80,17 +100,15 @@
             </div>
           </div>
 
-          <div class="offerInputs col-sm-6">
-            $
-              <input class="allInputs" type="text" name="offer-price" value="" id="offerPrice">
+          <div class="offerInputs">
+            <span id="dollarSign">$</span>
+            <input class="offerInput allInputs" type="text" name="offer-price" value="" id="offerPrice" placeholder="0.00">
           </div>
         </div>
-        <div class="estimated-hold-time col-sm-6">
-          <div class="estimatedHold col-sm-6">
+        <div class="estimated-hold-time col-sm-4">
+          <div class="estimatedHold col-sm-8">
             <label for="">Estimated Hold time (months)</label>
-          </div>
-          <div class="estimatedMonths col-sm-6">
-            <input class="mytext allInputs" type="text" name="hold-time" value="" id="holdTime" style="color:black;">
+            <input class="holdInput mytext allInputs" type="text" name="hold-time" value="" id="holdTime" style="color:black;">
           </div>
         </div>
       </div>
@@ -112,7 +130,7 @@
                     %
                     <input class="allInputs" type="text" name="percent-loan" value="" id="percentLoan">
                     $
-                    <input class="allInputs" type="text" name="loan" value="" id="loanTotal">
+                    <input class="allInputs" type="text" name="loan" value="" id="loanTotal" placeholder="0.00">
                   </div>
                 </div>
                 <div class="form-financial">
@@ -124,12 +142,13 @@
                 </div>
               </div>
               <div class="form-financial">
-                <label for="">Loan Cost</label>
+                <label for="">Monthly Loan Cost</label>
+                <label class="yearly" for="">Total Hold Time Cost</label>
                 <div>
                   $
-                  <input class="allInputs costsTotal" type="text" name="loan-payment" value="" id="loanPayment">
+                  <input class="allInputs" type="text" name="loan-payment" value="" id="loanPayment">
                   $
-                  <input class="allInputs" type="text" name="loan-cost" value="" id="loanTotalCost">
+                  <input class="allInputs  costsTotal" type="text" name="loan-cost" value="" id="loanTotalCost" placeholder="0.00">
                 </div>
               </div>
             </div>
@@ -149,6 +168,7 @@
               <div class="holding-content">
                 <div class="form-holding">
                   <label for="">Property Taxes</label>
+                  <label for="" class="monthly">Monthly</label>
                   <div>
                     $
                     <input class="holdingCostsYearly" type="text" name="property-taxes-yearly" value="" id="propertyTaxesYearly">
@@ -187,9 +207,16 @@
                   <label for="">Total Holding Costs</label>
                   <div>
                     $
-                    <input class="costsTotal" type="text" name="total-holding-cost-yearly" id="totalHoldingCostYearly">
+                    <input type="text" name="total-holding-cost-yearly" id="totalHoldingCostYearly">
                     $
                     <input type="text" name="total-holding-cost-monthly" id="totalHoldingCostMonthly">
+                  </div>
+                </div>
+                <div class="form-holding">
+                  <label for="">Total Estimated Hold Time Costs</label>
+                  <div>
+                    $
+                    <input class="costsTotal" type="text" name="total-holding-cost-estimated" id="totalHoldingCostEstimated">
                   </div>
                 </div>
               </div>

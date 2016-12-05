@@ -1,27 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @research.title %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @research.title %>
+  </p>
 
-<%= form_tag charges_path do %>
-  <article>
-    <label class="amount">
-      <span>Price: $<%= @research.price/100 %></span>
-    </label>
-  </article>
+  <%= form_tag charges_path do %>
+    <article>
+      <label class="amount">
+        <span>Price: $<%= @research.price/100 %></span>
+      </label>
+    </article>
 
-  <%= hidden_field_tag 'book_id', @research.id %>
+    <%= hidden_field_tag 'book_id', @research.id %>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description=<%= @research.title %>
-          data-amount=<%= @research.price %>
-          data-locale="auto">
-   </script>
- <% end %>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description=<%= @research.title %>
+            data-amount=<%= @research.price %>
+            data-locale="auto">
+     </script>
+   <% end %>
 
 
-<%= link_to 'Edit', edit_research_path(@research) %> |
-<%= link_to 'Back', researches_path %>
+  <%= link_to 'Edit', edit_research_path(@research) %> |
+  <%= link_to 'Back', researches_path %>
+</div>

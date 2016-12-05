@@ -74,7 +74,8 @@ div.search-button {
 .property-display {
  margin: 0 auto;
  height: 20em;
- width: 80%;
+ // width: 80%;
+ position: relative;
 }
 
 .property-info {
@@ -180,6 +181,15 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+div.navbar-fixed-side {
+  position: fixed;
+}
+
+.nav-wrap {
+  height: 100vh;
+  margin-top: 3em;
+}
+
 .no-padding {
   padding: 0 !important;
 }
@@ -190,6 +200,12 @@ body {
 
 
 .width-100 {
+  width: 100%;
+}
+
+div.navbar {
+  height: 50px;
+  position: fixed;
   width: 100%;
 }
 
@@ -215,6 +231,7 @@ body {
   cursor: pointer;
 }
 
+
 .fa.fa-bars {
   color: #304362;
 }
@@ -223,12 +240,17 @@ body {
 .nav-group {
   margin: 0 0 2em 0;
   padding-left: 2em;
+  // padding-top: 3em;
 }
 
 .nav-text {
   text-decoration: none;
   color: #fff;
   padding-left: 1em;
+}
+
+.nav li {
+  padding-bottom: 2em;
 }
 
 // // Show View CSS
@@ -262,7 +284,7 @@ body {
 .numbers {
   margin: 0 auto;
   height: 10em;
-  width: 80%;
+  // width: 80%;
   background-color: rgb(245,245,245);
   color: rgb(100,116,136);
 }
@@ -270,16 +292,17 @@ body {
 .numbers-all {
   font-weight: bolder;
   font-size: 40px;
-  display: inline-flex;
   padding-top: 1em;
   width: 100%;
-  padding: 1em;
-  padding-left: 2em;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .numbers-all-costs {
-  padding-right: 0.5em;
-  padding-left: 0.5em;
+  padding-right: 1em;
+  padding-left: 1em;
 }
 
 #holding-total-cost {
@@ -303,16 +326,24 @@ border-left: 2px solid #ADB2B5;
   font-size: 18px;
 }
 
+
+
 .offerHowMuch {
   padding-top: 1em;
 }
 
 .offer-hold {
   height: 9em;
-  background-color: #304362;
+  background-color: #527292;
   display: flex;
   color: white;
   justify-content: space-around;
+  padding-left: 4em;
+  padding-right: 4em;
+}
+
+.div.offerInputs.col-sm-8 {
+  padding-left: 8em;
 }
 
 .mytext {
@@ -320,13 +351,19 @@ border-left: 2px solid #ADB2B5;
 }
 .all-costs-form {
   margin: 0 auto;
-  width: 80%;
+  // width: 80%;
 }
 
 #offerPrice {
   border: none;
   background: inherit;
-  font-size: 30px;
+  font-size: 35px;
+  // font-weight: bolder;
+}
+
+#dollarSign {
+  font-size: 35px;
+  // font-weight: bolder;
 }
 
 #percentOffering{
@@ -334,13 +371,26 @@ border-left: 2px solid #ADB2B5;
 }
 
 .offerInputs {
-  padding-top: 1em;
+  padding-top: 2em;
+  display: flex;
+  padding-left: 9em;
 }
+
+::-webkit-input-placeholder {
+   color: rgb(100,116,136);
+}
+
 
 .estimated-hold-time {
   font-size: 18px;
-  padding-top: 2em;
+  padding-top: 1em;
+  margin-left: 5em;
 }
+
+.holdInput {
+  margin-left: 2em;
+}
+
 .selling-title {
   display: flex;
 }
@@ -359,4 +409,107 @@ border-left: 2px solid #ADB2B5;
 
 #totalHoldingCostMonthly {
   border: none;
+}
+
+.form-financial {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  padding-left: 20em;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+.form-holding {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 20em;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.monthly {
+  padding-left: 7em;
+}
+
+.form-buying {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 30em;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form-selling {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 30em;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form-selling-buying {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 30em;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form-repair {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 30em;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.all-total-content {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 30em;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.yearly {
+  padding-left: 5em;
+}
+
+.main-container {
+  position: relative;
+  top: 50px;
+}
+
+
+
+.results {
+ color: white;
+ display: flex;
+ justify-content: center;
+ flex-direction: column;
+ height: 90%;
+ float: right;
+ margin: 1% 20% 5px 0;
+ background: linear-gradient(
+     rgba(0, 0, 0, 0.5),
+     rgba(0, 0, 0, 0.5)
+   );
+ padding: 0 2em;
+}
+
+.results div h1 {
+ margin: 0;
+ padding: 0;
+ font-size: 1.5em;
+ font-family: 'Roboto', sans-serif;
+}
+
+.results div span {
+ margin: 0;
+ padding: 0;
+ font-size: 3.5em;
+ font-family: 'Roboto', sans-serif;
+ // color: green;
+ color: red;
 }

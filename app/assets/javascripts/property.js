@@ -107,20 +107,27 @@ $(document).on("turbolinks:load", function(){
       $('#miscellaneousMonthly').val(miscellaneousMonthly.toFixed(2));
     });
   });
-
-// Total Holding Cost Yearly
-  $(document).on("keyup", ".holdingCostsYearly", function() {
-      var sum = 0;
-      $(".holdingCostsYearly").each(function(){
-          sum += +$(this).val();
-      });
-      $('#totalHoldingCostYearly').val(sum);
-  });
+  // Total Holding Cost Yearly
+    $(document).on("keyup", ".holdingCostsYearly", function() {
+        var sum = 0;
+        $(".holdingCostsYearly").each(function(){
+            sum += +$(this).val();
+        });
+        $('#totalHoldingCostYearly').val(sum);
+    });
 
 //Total Holding Cost Monthly
 $(document).on("keyup", '#totalHoldingCostYearly', function() {
   var totalHoldingCostYearly = Number($('#totalHoldingCostYearly').val()) / 12
   $('#totalHoldingCostMonthly').val(totalHoldingCostYearly.toFixed(2));
+});
+
+// Total Estimated Holding Time Cost
+$(document).on("keyup", '#totalHoldingCostMonthly', function() {
+  var totalHoldingCostMonthly = Number($('#totalHoldingCostMonthly').val());
+  var holdTime = Number($('#holdTime').val());
+  var totalHoldingCostEstimated = totalHoldingCostMonthly * holdTime;
+  $('#totalHoldingCostEstimated').val(totalHoldingCostEstimated.toFixed(2));
 });
 
 
@@ -188,7 +195,7 @@ $(document).on("keyup", "#loanTotal", function() {
   var offerPrice = Number($('#offerPrice').val());
   var loanTotal = Number($('#loanTotal').val());
   var amountInvested = offerPrice - loanTotal;
-  $('#amountInvested').val(amountInvested);
+  $('#amountInvested').val(amountInvested.toFixed(2));
 });
 
 // Total Costs
@@ -197,7 +204,7 @@ $(document).on("keyup", ".costsTotal", function() {
   $(".costsTotal").each(function(){
       sum += +$(this).val();
   });
-  $('#totalAllCost').val(sum);
+  $('#totalAllCost').val(sum.toFixed(2));
 });
 
 // Estimated Net Profit
@@ -228,14 +235,14 @@ $(document).on("turbolinks:load", function(){
 
 // Total Financial Cost
 $(document).on("turbolinks:load", function(){
-  $(document).on('keydown', "#loanPayment", function(){
+  $(document).on('keydown', "#loanTotalCost", function(){
     $("#financialTotalCost").text('$'+ $(this).val());
   });
  });
 
 // Total Holding Cost
  $(document).on("turbolinks:load", function(){
-   $(document).on('keydown', "#totalHoldingCostYearly", function(){
+   $(document).on('keydown', "#totalHoldingCostEstimated", function(){
      $("#holdingTotalCost").text('$'+ $(this).val());
    });
   });
@@ -271,6 +278,6 @@ $(document).on("turbolinks:load", function(){
 // ROI
 $(document).on("turbolinks:load", function(){
   $(document).on('keydown', "#returnOnInvestment", function(){
-    $("#roiEstimated").text('%'+ $(this).val());
+    $("#roiEstimated").text($(this).val() + '%');
   });
  });

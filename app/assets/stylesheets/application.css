@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+.navbar-brand {
+  font-family: 'Baumans', cursive;
+}
+
+a.navbar-brand {
+  font-size: xx-large;
+  margin-left: 50px;
+}
