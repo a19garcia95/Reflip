@@ -7,6 +7,6 @@ test:
 
 production:
  adapter: redis
- url: redis://redistogo:314fc64f78462a3a949c3d92e968c21c@crestfish.redistogo.com:10796/
+ url: redis://redistogo:5f4ac3ca3dc79be0d24f5f62995ee411@sculpin.redistogo.com:9021/
  #heroku action_cable
  #change this url, because this one belongs to alejandro
