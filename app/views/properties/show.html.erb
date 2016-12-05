@@ -41,9 +41,16 @@
 
  <div class="clearfix"></div>
  <div class="trend">
-   Property Trend Chart
-   <div class="">
-     <img src="<%= @property.chart5year %>" alt="" />
-   </div>
- </div>
+      <div class="temp-chart chart">
+        <%= image_tag "listings.png", height: "495.5px", width: "556.5px" %>
+      </div>
+      <div class="history-chart chart">
+        <!-- <img src="<%# @property.chart5year %>" alt="" /> -->
+        <%= image_tag "chart.png", height: "495.5px", width: "888.1" %>
+      </div>
+    </div>
+    <div class="comp-map">
+      <%= image_tag "map.png", height: "80%", width: "90%" %>
+    </div>
+  </div>
 </div>

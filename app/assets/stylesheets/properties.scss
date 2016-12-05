@@ -510,6 +510,21 @@ border-left: 2px solid #ADB2B5;
  padding: 0;
  font-size: 3.5em;
  font-family: 'Roboto', sans-serif;
- // color: green;
- color: red;
+ color: green;
+ // color: red;
+}
+
+
+.trend {
+height: 35em;
+width: 100%;
+display: inline-flex;
+}
+
+.chart {
+ margin: 1em;
+}
+
+.chart img {
+ padding: 1em;
 }
